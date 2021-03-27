@@ -1,0 +1,26 @@
+<% if(locals.user) { %>
+
+  <header>
+    <nav>
+      <ul>
+        <a href="/"><li>HOME</li></a>
+        <a href="/create"><li>NEW RECORD</li></a>
+        <a href="/users/logout"><li>LOGOUT</li></a>
+        <a href="/users/register"><li>REGISTER</li></a>
+      </ul>
+    </nav>
+</header>
+
+<% } else  { %>
+
+  <header>
+    <nav>
+      <ul>
+        <a href="/"><li>HOME</li></a>
+        <a href="/users/login"><li>LOGIN</li></a>
+        <a href="/users/register"><li>REGISTER</li></a>
+      </ul>
+    </nav>
+</header>
+
+<% } %>

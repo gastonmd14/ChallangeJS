@@ -1,19 +1,89 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+  <%- include("./partials/head") %>
+
   <body>
+    <%- include("./partials/header") %>
+
     <!-- <h1><%= title %></h1>
     <p>Welcome to <%= title %></p> -->
-    <section>
-      <h1>Balance</h1>
-      <p>Registros</p>
-      <p>Total</p>
-    </section>
+    <% if(locals.user) { %>
+
+      <section class="principal">
+        <table>
+          <tr>
+            <td colspan="6"><h1>BALANCE</h1></td>
+          </tr>
+          <tr>
+            <td class="orden">ID</td>
+            <td>DATE</td>
+            <td class="categoria">CATEGORY</td>
+            <td>TYPE</td>
+            <td>CONCEPT</td>
+            <td>AMOUNT</td>
+            <td class="link">ACTION</td>
+          </tr>
+
+          <% record.forEach(reg => { %>
+
+          <tr>
+            <td class="orden"><%= reg.id %></td>
+            <td><%= reg.date.toLocaleDateString('es-AR', {
+              month: '2-digit',day: '2-digit',year: 'numeric'}) %></td>
+            <td class="categoria"><%= reg.category %></td>
+            <td><%= reg.type %></td>
+            <td><%= reg.concept %></td>
+            <td>$ <%= reg.amount %></td>
+            <td>
+              <p><a class="link" href="/edit/<%= reg.id %>"> - EDIT - </a></p>
+              <p><a class="link" href="/"> 
+                  <form action="/<%= reg.id %>/?_method=DELETE" method="POST">
+                    <input class="dissapear" type="number" name="amount" id="amount" value="<%= reg.amount %>">
+                    <input class="dissapear" type="number" name="total" id="total" value="<%= balance.total %>">
+                    <button class="butdelete" type="submit"> - DELETE - </button>
+                  </form>   
+              </a></p>
+            </td>
+          </tr>
+
+          <% }) %>
+
+          <tr>
+            <td colspan="1">TOTAL</td>
+            <td>$ <%= balance.total %></td>
+          </tr>
+        </table>
+      </section>
+
+    <% } else  { %>
+
+      <section class="principal">
+      
+        <table>
+          <tr>
+            <td colspan="6"><h1>BALANCE</h1></td>
+          </tr>
+          <tr>
+            <td class="orden">ID</td>
+            <td>DATE</td>
+            <td class="categoria">CATEGORY</td>
+            <td>TYPE</td>
+            <td>CONCEPT</td>
+            <td>AMOUNT</td>
+            <td class="link">ACTION</td>
+          </tr>
+
+          <tr>
+            <td colspan="1">TOTAL</td>
+            <td>$ </td>
+          </tr>
+        </table>
+
+        <h1>You need to <a class="log" href="/users/login">LOGIN</a> first !¡</h1>
+
+      </section>
+
+    <% } %>
+
   </body>
 </html>
