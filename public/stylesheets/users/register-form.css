@@ -29,3 +29,18 @@ button {
   color: white;
   padding: 10px 30px;
 }
+
+
+@media(min-width: 426px) {
+  .regis-sec {
+    margin: 50px
+  }
+  
+}
+
+@media(min-width: 767px) {
+  .regis-sec {
+    margin: 80px
+  }
+
+}

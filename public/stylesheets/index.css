@@ -91,3 +91,37 @@ td {
 
 .red {color: red;}
 .green {color: green;}
+
+@media(min-width: 426px) {
+  .index-sec {
+    margin: 50px 30px
+  }
+}
+
+@media(min-width: 767px) {
+  li {    
+    font-size: 1.5em;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  td {
+    font-size: 1em;
+  }
+  .orden {
+    display: revert;
+    text-align: center;
+    padding: 10px;
+  } 
+  .categoria {
+    display: revert;
+    text-align: center;
+    padding: 10px;
+  }
+  .index-sec {
+    margin: 80px
+  }
+  .butdelete {
+    font-size: 1em;
+  }
+}
