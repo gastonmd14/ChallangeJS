@@ -1,0 +1,31 @@
+h1 {
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+}
+
+.login-form {
+  margin: 15px 20px;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.login label {
+  padding: 10px 0;
+}
+
+.boton {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+button {
+  background-color: #008891;
+  color: white;
+  padding: 10px 30px;
+}

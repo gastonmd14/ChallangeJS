@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <%- include("./partials/head") %>
+
+  <body>
+    <%- include("./partials/header") %>
+
+    <section class="principal">
+      <h1>NEW RECORD</h1>
+
+      <form class="create-form" action="/create" method="POST">
+        <div class="registro">
+          <label for="">DATE</label>
+          <input type="date" name="date" id="date" />
+        </div>
+        <div class="registro">
+          <label for="category">CATEGORY</label>
+          <select name="category" id="category">
+            <option value="PERSONAL">PERSONAL</option>
+            <option value="FOOD">FOOD</option>            
+          </select>
+        </div>
+        <div class="registro">
+          <label for="type">TYPE</label>
+          <select name="type" id="type">
+            <option value="EGRESS">EGRESS</option>
+            <option value="INGRESS">INGRESS</option>            
+          </select>
+        </div>
+        <div class="registro">
+          <label for="concept">CONCEPT</label>
+          <select name="concept" id="concept">
+            <option value="INTERNET">INTERNET</option>
+            <option value="BREAKFAST">BREAKFAST</option>
+            <option value="DINNER">DINNER</option>
+            <option value="LUNCH">LUNCH</option>
+            <option value="TELEHPONE">TELEHPONE</option>
+            <option value="CELULAR">CELULAR</option>
+            <option value="SALARY">SALARY</option>
+          </select>
+        </div>
+        <div class="registro">
+          <label for="amount">AMOUNT</label>
+          <input
+            type="number"
+            name="amount"
+            id="amount"
+            placeholder=" 100.00 or -100.00"
+          />
+        </div>
+        <div class="registro dissapear">
+          <label for="total">TOTAL</label>
+          <input type="number" name="total" id="total" value="<%= result.total %>"/>
+        </div>
+        <div class="boton">
+          <button type="submit">CREATE</button>
+          <button type="reset">RESET</button>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>

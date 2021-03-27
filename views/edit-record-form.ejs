@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <%- include("./partials/head") %>
+
+  <body>
+    <%- include("./partials/header") %>
+
+    <section class="principal">
+      <h1>EDIT RECORD</h1>
+
+      <form class="edit-form" action="/<%= data.id %>/?_method=PUT" method="POST">
+        <div class="registro">
+          <label for="">DATE</label>
+          <input type="date" name="date" id="date" value="<%= data.date.toLocaleDateString('es-AR', {
+            month: '2-digit',day: '2-digit',year: 'numeric'}) %>" />
+        </div>
+        <div class="registro">
+          <label for="category">CATEGORY</label>
+          <select name="category" id="category">
+            <option value="FOOD">FOOD</option>
+            <option value="PERSONAL">PERSONAL</option>
+          </select>
+        </div>
+        <div class="registro">
+          <label for="type">TYPE</label>
+          <select name="type" id="type">
+            <option value="<%= data.type %>"><%= data.type %></option>
+          </select>
+        </div>
+        <div class="registro">
+          <label for="concept">CONCEPT</label>
+          <select name="concept" id="concept">
+            <option value="INTERNET">INTERNET</option>
+            <option value="BREAKFAST">BREAKFAST</option>
+            <option value="DINNER">DINNER</option>
+            <option value="LUNCH">LUNCH</option>
+            <option value="TELEHPONE">TELEHPONE</option>
+            <option value="CELULAR">CELULAR</option>
+            <option value="SALARY">SALARY</option>
+          </select>
+        </div>
+        <div class="registro">
+          <label for="amount">AMOUNT</label>
+          <input
+            type="number"
+            name="amount"
+            id="amount"
+            placeholder=" $ 100.00 "
+            value="<%= data.amount%>"
+          />
+        </div>
+        <div class="registro dissapear">
+          <label for="total">TOTAL</label>
+          <input type="number" name="total" id="total" value="<%= data2.total %>"/>
+        </div>
+        <div class="boton">
+          <button type="submit">UPDATE</button>          
+        </div>
+      </form>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Acme", sans-serif;
+}
+
+/* Cabecera */
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #00587a;
+  height: 100px;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 20px;
+}
+
+a {
+  color: #e7e7de;
+  text-decoration: none;
+}
+
+li {
+  display: inline;
+  font-size: 0.8em;
+  padding: 10px;
+  margin-right: 10px;
+  border-right: 5px solid;
+  border-left: 5px solid;
+}
+
+/* Cuerpo */
+
+body {
+  font: "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.principal {
+  margin: 20px;
+  border: 1px solid #0f3057;
+  box-shadow: 0px 0px 20px 5px rgba(0, 88, 122, 1);
+}
+
+h1 {
+  font-size: 24px;
+  margin: 10px;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  font-size: 12px;
+  text-align: center;
+  padding: 10px;
+}
+
+.orden {
+  display: none;
+}
+
+.categoria {
+  display: none;
+}
+
+.link {
+  color: #008891;
+}
+
+.log {
+  color: #008891;
+}
+
+.butdelete {
+  padding: 0;
+  background-color: white;
+  color: #008891;
+  border: 0px;
+  font-size: 12px
+} 
+
+.dissapear {display: none;}
+
+.red {color: red;}
+.green {color: green;}
